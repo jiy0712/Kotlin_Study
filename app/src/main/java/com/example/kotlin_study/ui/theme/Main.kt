@@ -5,6 +5,10 @@ open class Person
 fun main() {
 }
 
+interface Drawable{
+    fun draw()
+}
+
 class SuperMan : Person()
 
 abstract class Animal{
@@ -12,13 +16,22 @@ abstract class Animal{
         print("이동")
     }
 }
-class Dog : Animal(){
+class Dog : Animal(), Drawable{ //인터페이스 적용 방법 (, Drawable)
     override fun move(){
         print("껑충")
     }
+
+    override fun draw() {
+        TODO("Not yet implemented")
+    }
+
 }
-class Cat : Animal(){
+class Cat : Animal(), Drawable{
     override fun move(){
         print("살금")
+    }
+
+    override fun draw() {
+        TODO("Not yet implemented")
     }
 }
