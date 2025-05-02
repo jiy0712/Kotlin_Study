@@ -1,49 +1,12 @@
 package com.example.kotlin_study.ui.theme
 
-open class Person
-
 fun main() {
-    val dog: Animal = Dog()
-    val cat = Cat()
+    val box = Box(10)
+    val box2 = Box("dfdfd")
 
-    //타입체크(is)
-    if(dog is Dog){ //T
-        println("멍멍이")
-    }
-
-    if(dog is Cat){ //F
-        println("멍멍이")
-    }
-
+    print(box.value)
 }
+//제네릭(프로그래밍에서 타입 파라미터를 사용하여 코드를 일반화하고 재사용성을 높이는 방법)
+class Box<T>(var value: T){
 
-interface Drawable{
-    fun draw()
-}
-
-class SuperMan : Person()
-
-abstract class Animal{
-    open fun move(){ //open을 해야 상속하고 Dog, Cat에서 오버라이드가 가능
-        print("이동")
-    }
-}
-class Dog : Animal(), Drawable{ //인터페이스 적용 방법 (, Drawable)
-    override fun move(){
-        print("껑충")
-    }
-
-    override fun draw() {
-        TODO("Not yet implemented")
-    }
-
-}
-class Cat : Animal(), Drawable{
-    override fun move(){
-        print("살금")
-    }
-
-    override fun draw() {
-        TODO("Not yet implemented")
-    }
 }
