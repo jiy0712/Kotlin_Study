@@ -3,6 +3,18 @@ package com.example.kotlin_study.ui.theme
 open class Person
 
 fun main() {
+    val dog: Animal = Dog()
+    val cat = Cat()
+
+    //타입체크(is)
+    if(dog is Dog){ //T
+        println("멍멍이")
+    }
+
+    if(dog is Cat){ //F
+        println("멍멍이")
+    }
+
 }
 
 interface Drawable{
